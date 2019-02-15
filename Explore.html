@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Explore Books</title>
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>    
+</head>
+<header>
+    <div class="header">
+        <div class="book-image">
+            <img src="books.png" alt="Books">
+        </div>    
+        <div class="menu">
+            <ul>
+                <li><a id="home-link" href="#">Home</a></li>
+                <li><a id="authors-link" href="#">Authors</a></li>
+                <li><a id="publishers-link" href="#">Publishers</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Collections</button>
+                        <div class="dropdown-content">
+                            <a href="#">Tech</a>
+                            <a href="#">Novel</a>
+                            <a href="#">Fiction</a>
+                            <a href="#">Comics</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>        
+        </div>
+    </div>
+</header>
+<body>
+    <div class="container">                
+        <div class="content">
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            $.get('home.html', function(data) {
+                $('.content').empty();
+                $('.content').append($(data));
+            });
+
+            $('#home-link').click( function() {
+                $.get('home.html', function(data) {
+                    $('.content').empty();
+                    $('.content').append($(data));
+                });
+            });
+            $('#authors-link').click( function() {
+                $.get('authors.html', function(data) {
+                    $('.content').empty();                
+                    $('.content').append($(data));
+                });
+            });
+            $('#publishers-link').click( function() {
+                $.get('publishers.html', function(data) {
+                    $('.content').empty();                
+                    $('.content').append($(data));
+                });
+            });
+        });
+    </script>
+</body>
+</html>
