@@ -48,8 +48,9 @@ img {
 /* dropdown styles */
 
 .dropbtn {
-    background-color: #60cdcb;    
-    border: none;    
+    background-color: inherit;
+    border: none;
+    outline: none;
 }
   
 .dropdown {
